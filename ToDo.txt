@@ -1,0 +1,119 @@
+﻿Tableau POC
+	PolicyDescriptor and attributes
+		Test whether Tableau should reference StgDimPolicySymbol (or other RSDM table)
+			and whether we can join to it effectively
+		Revisit Sector/Category/PacCode2 for new policies
+			Look at signatures in each group
+	Test dual-axis with open data
+	
+
+Macro
+	Possibly make smarter to only add columns if missing
+	
+	Extract usage
+		Can extracts be made available for biz team
+			Check with Amanda
+
+	LatLongZip
+		Best zip column, and issues with other columns
+	
+	Identify workbooks that sometimes have multiple worksheets
+	
+	Logging? How do we diagnose a problem?
+	
+
+Pat
+	Rally stories moved to validation
+	ESRI and Isaac
+	Refinement: Jon presents and I add color
+	Walkthrough productionalization
+		Who can post?
+			Who owns the content for each table?
+				Enrollment and Location
+				LatLong
+				PolicyDescriptor
+	
+InsuredID and EffectiveDate
+	Improve queries for 2665933
+	What are the other policies that need this?
+		Premier?
+	Missing effective date
+		RE UMXS, 1744100, 2660173
+	Determine whether DPG can provide these fields in the missing files
+
+Identify derived policies
+	Get policy numbers
+	xquery/xslt
+
+LatLong
+	Google version
+		Rename GeoPlay1 to something
+		Deploy somewhere
+	
+	Test size of inbound files
+		Combine 2-4-8, etc
+	
+	Process improvement plans
+		More history
+		ESRI geocoding?
+		Break apart multiple addresses
+			Provide guidelines to DPG
+
+	May need a way to join to LatLong for crime data
+		Attrib for 500 block of Vine
+	
+Cleanup
+	Identify files, scripts, et al that are part of deployment.
+	Resume building instructions
+	
+ML
+	Often used queries
+	Build 2-3 categories of workspaces:
+		databases, forests, schemas, app severs, etc
+		templates
+		operational queries, such as derived policies
+		analytical and discovery queries
+	
+Mock up execution 
+	enrollments
+	location
+
+PowerShell
+	Figure a way to resume where we left off
+	Get files more recent than X, where x is stored somewhere
+
+Consider copying xlsx to our area
+	Then move to InboundDocs after macro execution
+	If file exists, that is, has already been moved, overwrite
+	
+Consider flattening the Inbound folder, to imitate the Bordereaux folder
+
+Consider file-movement model
+	Interim landings for
+		inbound
+		xml
+		?
+	Always start at the step closest to ML
+	Pull all the way through to ML
+	Once interim pipeline is clear, then pull from new source content
+	Plan for a way to include logging in the process
+	
+Risk Radar?
+
+Premium reconciliation
+	powershell?
+	Identify policies where premium gets trued-up annually
+	
+
+Writeup for SEI?
+Writeup for GAI?
+
+Re-enable Veracity template?
+Archive it?
+
+Assemble ML questions
+	How do I incorporate document uri in sql results
+	Can/should I add the expression into the template?
+	
+Does URI naming convention need work?
+	
